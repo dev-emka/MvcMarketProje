@@ -1,0 +1,35 @@
+﻿@using MvcStok.Models.Entity
+@model List<TblUrunler>
+@{
+    ViewBag.Title = "KapaliUrunler";
+    Layout = "~/Views/Shared/_adminlayout.cshtml";
+}
+
+<h1>Satışta Olmayan Ürünler</h1>
+<table class="table table-bordered">
+    <tr>
+        <th>ID</th>
+        <th>Ad</th>
+        <th>Marka</th>
+        <th>Stok</th>
+        <th>Alış Fiyatı</th>
+        <th>Satış Fiyatı</th>
+        <th>Kategori</th>
+        <th>İşlemler</th>
+    </tr>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.id</td>
+                <td>@item.ad</td>
+                <td>@item.marka</td>
+                <td>@item.stok</td>
+                <td>@item.alisfiyat ₺</td>
+                <td>@item.satisfiyat ₺</td>
+                <td>@item.TblKategori.ad</td>
+                <td><a href="/Urunler/Yenile/@item.id" class="btn btn-success">Satışa Ekle</a></td>
+            </tr>
+        }
+    </tbody>
+</table>

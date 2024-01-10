@@ -1,0 +1,27 @@
+﻿@model MvcStok.Models.Entity.TblMusteriler
+@{
+    ViewBag.Title = "YeniMusteri";
+    Layout = "~/Views/Shared/_adminlayout.cshtml";
+}
+
+<h1>Yeni Müşteri Ekleme</h1>
+<form method="post">
+    <label>Ad</label>
+    @Html.TextBoxFor(m => m.ad, new {@class="form-control"})
+    @Html.ValidationMessageFor(m => m.ad, "", new {@style="color:red"})
+    <br />
+
+    <label>Soyad</label>
+    @Html.TextBoxFor(m => m.soyad, new {@class="form-control"})
+    <br />
+
+    <label>Şehir</label>
+    @Html.TextBoxFor(m => m.sehir, new {@class="form-control"})
+    <br />
+
+    <label>Bakiye</label>
+    <label class="form-control">0 ₺</label>
+    <br />
+    <button class="btn btn-success">Ekle</button>
+</form>
+

@@ -1,0 +1,37 @@
+﻿li.cıkıs {
+    /*background-color:#ff3434;*/
+    position:absolute;
+    right:25px;
+    border:25px;
+    font-size:x-large;
+    color:white;
+}
+title.marketname{
+    font-size:x-large;
+    background-color:mediumvioletred;
+}
+table{
+    color:black;
+    background-color:aquamarine;    
+    font-size:x-large;
+    
+    border-radius:10px/7px;
+}
+div.container{
+    width:100%;
+    
+}
+h1{
+    color:white;
+    font-size:xx-large;
+    background-color:dimgray;
+    text-align:center;
+    
+
+}
+
+
+label{
+    font-size:larger;
+}
+

@@ -1,0 +1,35 @@
+﻿@using MvcStok.Models.Entity
+@using PagedList
+@using PagedList.Mvc
+@model PagedList.IPagedList<TblSatislar>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_adminlayout.cshtml";
+}
+
+<h1>Satışlar Menü</h1>
+<table class="table table-bordered">
+    <tr>
+        <th>ID</th>
+        <th>Ürün</th>
+        <th>Personel</th>
+        <th>Müşteri</th>
+        <th>Fiyat</th>
+        <th>Tarih</th>
+    </tr>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.id</td>
+                <td>@item.TblUrunler.ad</td>
+                <td>@item.TblPersonel.ad @item.TblPersonel.soyad</td>
+                <td>@item.TblMusteriler.ad @item.TblMusteriler.soyad</td>
+                <td>@item.fiyat ₺</td>
+                <td>@item.tarih</td>
+            </tr>
+        }
+    </tbody>
+</table>
+@Html.PagedListPager((IPagedList)Model, sayfa => Url.Action("Index",new {sayfa}))
+<a href="/Satislar/YeniSatis" class="btn btn-warning">Yeni Satış İşlemi</a>
